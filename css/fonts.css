@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('fonts/texgyreadventorregular/texgyreadventorregular.eot');
+    src: url('fonts/texgyreadventorregular/texgyreadventorregular.eot') format('embedded-opentype'),
+         url('fonts/texgyreadventorregular/texgyreadventorregular.woff2') format('woff2'),
+         url('fonts/texgyreadventorregular/texgyreadventorregular.woff') format('woff'),
+         url('fonts/texgyreadventorregular/texgyreadventorregular.ttf') format('truetype'),
+         url('fonts/texgyreadventorregular/texgyreadventorregular.svg#texgyreadventorregular') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/OpenSansRegular/OpenSansRegular.eot');
+    src: url('fonts/OpenSansRegular/OpenSansRegular.eot') format('embedded-opentype'),
+         url('fonts/OpenSansRegular/OpenSansRegular.woff2') format('woff2'),
+         url('fonts/OpenSansRegular/OpenSansRegular.woff') format('woff'),
+         url('fonts/OpenSansRegular/OpenSansRegular.ttf') format('truetype'),
+         url('fonts/OpenSansRegular/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'SFUEurostileBoldCondensed';
+    src: url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.eot');
+    src: url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.eot') format('embedded-opentype'),
+         url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.woff2') format('woff2'),
+         url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.woff') format('woff'),
+         url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.ttf') format('truetype'),
+         url('fonts/SFUEurostileBoldCondensed/SFUEurostileBoldCondensed.svg#SFUEurostileBoldCondensed') format('svg');
+}
+
+@font-face {
+    font-family: 'RobotoCondensedBold';
+    src: url('fonts/RobotoCondensedBold/RobotoCondensedBold.eot');
+    src: url('fonts/RobotoCondensedBold/RobotoCondensedBold.eot') format('embedded-opentype'),
+         url('fonts/RobotoCondensedBold/RobotoCondensedBold.woff2') format('woff2'),
+         url('fonts/RobotoCondensedBold/RobotoCondensedBold.woff') format('woff'),
+         url('fonts/RobotoCondensedBold/RobotoCondensedBold.ttf') format('truetype'),
+         url('fonts/RobotoCondensedBold/RobotoCondensedBold.svg#RobotoCondensedBold') format('svg');
+}
+
+@font-face {
+    font-family: 'UTMAvo';
+    src: url('fonts/UTMAvo/UTMAvo.eot');
+    src: url('fonts/UTMAvo/UTMAvo.eot') format('embedded-opentype'),
+         url('fonts/UTMAvo/UTMAvo.woff2') format('woff2'),
+         url('fonts/UTMAvo/UTMAvo.woff') format('woff'),
+         url('fonts/UTMAvo/UTMAvo.ttf') format('truetype'),
+         url('fonts/UTMAvo/UTMAvo.svg#UTMAvo') format('svg');
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('fonts/RobotoLight/RobotoLight.eot');
+    src: url('fonts/RobotoLight/RobotoLight.eot') format('embedded-opentype'),
+         url('fonts/RobotoLight/RobotoLight.woff2') format('woff2'),
+         url('fonts/RobotoLight/RobotoLight.woff') format('woff'),
+         url('fonts/RobotoLight/RobotoLight.ttf') format('truetype'),
+         url('fonts/RobotoLight/RobotoLight.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'RobotoCondensedRegular';
+    src: url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot');
+    src: url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot') format('embedded-opentype'),
+         url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.woff2') format('woff2'),
+         url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.woff') format('woff'),
+         url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.ttf') format('truetype'),
+         url('fonts/RobotoCondensedRegular/RobotoCondensedRegular.svg#RobotoCondensedRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'SFUEurostileCondensed';
+    src: url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.eot');
+    src: url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.eot') format('embedded-opentype'),
+         url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.woff2') format('woff2'),
+         url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.woff') format('woff'),
+         url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.ttf') format('truetype'),
+         url('fonts/SFUEurostileCondensed/SFUEurostileCondensed.svg#SFUEurostileCondensed') format('svg');
+}

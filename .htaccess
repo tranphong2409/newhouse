@@ -1,0 +1,18 @@
+# Helicon Ape version 3.1.0.115
+
+RewriteEngine On
+
+DirectoryIndex  index.php
+
+RewriteRule ^administrator$ administrator/ [L]
+RewriteRule ^administrator/$ administrator/ [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)x([0-9]+)x([0-9]+)/(.*)\.(jpg|jpeg|png|gif)$  timthumb.php?src=upload/$2/$6.$7&h=$4&w=$3&zc=$5&q=100
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?com=$1 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?com=$1&id=$2 [L]
+RewriteRule ^trang-ca-nhan/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+).html$ index.php?com=trang-ca-nhan&act=$1&id=$2  [L]
+RewriteRule ^([a-zA-Z0-9_-]+)&page=([0-9]+)$ index.php?com=$1&page=$2 [L]
+
+RewriteRule ^kich-hoat-mail/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+).html$ index.php?com=kich-hoat-mail&keycode=$1&username=$2 [L]
