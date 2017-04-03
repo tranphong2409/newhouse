@@ -5,34 +5,18 @@
 
         <li class="menu_hidden"><a href="gioi-thieu" title="<?=_gioithieu?>"><?=_gioithieu?></a></li>
 
-        <li>
+        <li class="sub_bv">
             <a href="nha-dat-ban" title="<?=_nhadatban?>"><?=_nhadatban?></a>
-            <div class="box_sub">
-            <div class="sub_menu">
+            <div class="box_sub_bv">
+            <div class="sub_menu_bv">
                 <div class="content_submn">
-                <h3>Theo địa điểm</h3>
-                    <ul>
-                     <?php for($i=0;$i<count($rs_quan);$i++){ ?>
-                        <li><a href="nha-dat-ban/<?=$rs_quan[$i]['tenkhongdau']?>" title="<?=$rs_quan[$i]['ten_'.$lang]?>"><?=$rs_quan[$i]['ten_'.$lang]?></a></li>
-                    <?php } ?>
-                    </ul>
-                </div><?//content_submn?>
-                <div class="content_submn">
-                <h3>Theo loại</h3>
+
                     <ul>
                     <?php for($i=0;$i<count($rs_loainhaban);$i++){ ?>
-                        <li><a href="nha-dat-ban/<?=$rs_loainhaban[$i]['tenkhongdau']?>" title="<?=$rs_loainhaban[$i]['ten_'.$lang]?>"><?=$rs_loainhaban[$i]['ten_'.$lang]?></a></li>
+                        <li><a href="nha-dat-ban/<?=$rs_loainhaban[$i]['tenkhongdau']?>" title="<?=$rs_loainhaban[$i]['ten_'.$lang]?>">Bán <?=$rs_loainhaban[$i]['ten_'.$lang]?></a></li>
                     <?php } ?>
                     </ul>
-                </div><?//content_submn?>
-                <div class="content_submn">
-                <h3>Theo giá</h3>
-                    <ul>
-                    <?php for($i=0;$i<count($rs_gianhaban);$i++){ ?>
-                        <li><a href="nha-dat-ban/<?=$rs_gianhaban[$i]['tenkhongdau']?>" title="<?=$rs_gianhaban[$i]['ten_'.$lang]?>"><?=$rs_gianhaban[$i]['ten_'.$lang]?></a></li>
-                    <?php } ?>
-                    </ul>
-                </div><?//content_submn?>
+
             </div><?//sub_menu?>
             </div><?//box_sub?>
         </li>
@@ -53,7 +37,7 @@
                         <h3>Theo loại</h3>
                         <ul>
                             <?php for($i=0;$i<count($rs_loainhathue);$i++){ ?>
-                                <li><a href="cho-thue/<?=$rs_loainhathue[$i]['tenkhongdau']?>" title="<?=$rs_loainhathue[$i]['ten_'.$lang]?>"><?=$rs_loainhathue[$i]['ten_'.$lang]?></a></li>
+                                <li><a href="cho-thue/<?=$rs_loainhathue[$i]['tenkhongdau']?>" title="<?=$rs_loainhathue[$i]['ten_'.$lang]?>">Thuê <?=$rs_loainhathue[$i]['ten_'.$lang]?></a></li>
                             <?php } ?>
                         </ul>
                     </div><?//content_submn?>

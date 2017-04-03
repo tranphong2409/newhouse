@@ -57,8 +57,8 @@
             <div class="title_tk">Công cụ Tìm kiếm</div><div class="clear"></div>
             
                 <ul id="tabstk">
-                  <li><a href="#" data-rel="tabtk1">Nhà bán</a></li>
-                  <li><a href="#" data-rel="tabtk2">Nhà thuê</a></li>
+                  <li><a href="#" data-rel="tabtk1">Nhà đất bán</a></li>
+                  <li><a href="#" data-rel="tabtk2">Nhà đất cho thuê</a></li>
                   <li><a href="#" data-rel="tabtk3">Dự án</a></li>
                 </ul>
                 <div id="content_tab_tk">
@@ -66,6 +66,13 @@
                   <form action="tim-kiem-nha-dat" id="timkiemnd" name="timkiemnd" method="post" accept-charset="utf-8">
                     <input type="hidden" name="type" id="type" value="nhaban">
                     <div class="timkiemnd">
+                        <select name="loaidat" id="loaidat">
+                            <option value="">-- Chọn loại --</option>
+                            <?php for($i=0;$i<count($rs_loainhaban);$i++){ ?>
+                                <option value="<?=$rs_loainhaban[$i]['id']?>"> Bán <?=$rs_loainhaban[$i]['ten_'.$lang]?></option>
+                            <?php } ?>
+                        </select>
+                        <div class="clear"></div>
                       <select name="quanhuyen" id="quanhuyennb">
                         <option value="">-- Chọn quận --</option>
                         <?php for($i=0;$i<count($rs_quan);$i++){ ?>
@@ -73,6 +80,13 @@
                         <?php } ?>
                       </select>
                       <div class="clear"></div>
+                        <select name="dientich" id="dientich">
+                            <option value="">--Chọn diện tích --</option>
+                            <?php for($i=0;$i<count($rs_dientich);$i++){ ?>
+                                <option value="<?=$rs_dientich[$i]['id']?>"><?=$rs_dientich[$i]['ten_'.$lang]?></option>
+                            <?php } ?>
+                        </select>
+                        <div class="clear"></div>
                       <select name="gia" id="gia">
                         <option value="">-- Chọn mức giá --</option>
                         <?php for($i=0;$i<count($rs_gianhaban);$i++){ if($rs_gianhaban[$i]['ten_vi']!=''){ ?>
@@ -80,20 +94,8 @@
                         <?php } } ?>
                       </select>
                       <div class="clear"></div>
-                      <select name="dientich" id="dientich">
-                        <option value="">--Chọn diện tích --</option>
-                        <?php for($i=0;$i<count($rs_dientich);$i++){ ?>
-                        <option value="<?=$rs_dientich[$i]['id']?>"><?=$rs_dientich[$i]['ten_'.$lang]?></option>
-                        <?php } ?>
-                      </select>
-                      <div class="clear"></div>
-                      <select name="loaidat" id="loaidat">
-                        <option value="">-- Chọn loại --</option>
-                        <?php for($i=0;$i<count($rs_loainhaban);$i++){ ?>
-                            <option value="<?=$rs_loainhaban[$i]['id']?>"><?=$rs_loainhaban[$i]['ten_'.$lang]?></option>
-                        <?php } ?>
-                      </select>
-                      <div class="clear"></div>
+
+
                       <select name="huong" id="huong">
                         <option value="">-- Chọn hướng --</option>
                         <?php for($i=0;$i<count($rs_huong);$i++){ ?>
@@ -135,7 +137,7 @@
                       </select>
                       <div class="clear"></div>
                       <select name="dientich" id="dientich">
-                        <option value="">--Chọn diện tích --</option>
+                        <option value="">-- Chọn diện tích --</option>
                         <?php for($i=0;$i<count($rs_dientich);$i++){ ?>
                         <option value="<?=$rs_dientich[$i]['id']?>"><?=$rs_dientich[$i]['ten_'.$lang]?></option>
                         <?php } ?>
@@ -144,7 +146,7 @@
                       <select name="loaidat" id="loaidat">
                         <option value="">-- Chọn loại --</option>
                         <?php for($i=0;$i<count($rs_loainhathue);$i++){ ?>
-                            <option value="<?=$rs_loainhathue[$i]['id']?>"><?=$rs_loainhathue[$i]['ten_'.$lang]?></option>
+                            <option value="<?=$rs_loainhathue[$i]['id']?>">Thuê <?=$rs_loainhathue[$i]['ten_'.$lang]?></option>
                         <?php } ?>
                       </select>
                       <div class="clear"></div>
