@@ -6,7 +6,7 @@
 ?>
 <?php if(count($rs_qc)>2){ ?>
 <script type="text/javascript">
-    var demqc = 1;
+    var demqc = 0;
     setInterval(function(){
 
         $('.imgqc:nth-child(1)').slideUp(800, function(){
@@ -25,7 +25,7 @@
         if(demqc+1 < <?=count($rs_qc)?>){
             demqc++;
         }else{
-            demqc = 1;
+            demqc = 0;
         }
 
     },3000);

@@ -23,7 +23,7 @@
 	  $d->reset();
 	  $sql = "select id,thumb_vi,link,ten_vi from #_photo where hienthi=1 and type='imgtrangchu' order by stt asc ";
 	  $d->query($sql);
-	  $quangcao = $d->result_array();
+    $rs_qc = $d->result_array();
 
     //echo var_dump($rs_tintucaj);exit();
 		
