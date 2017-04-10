@@ -1,5 +1,4 @@
-<?php 
-
+<?php
  function get_phongtamd()
   {
     global $item;
@@ -115,54 +114,12 @@ function get_phaplyd()
     return $str;
   }
  ?>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5Mevy_rl8U4ZyBB8i5jmdxfvb9Cg5UoE&sensor=false&libraries=places"></script> 
-
-<script src="administrator/ckeditor/ckeditor.js"></script>
  <script type="text/javascript" src="js/jquery.price_format.2.0.js"></script>
 <link href="administrator/js/plugins/multiupload/css/jquery.filer.css" type="text/css" rel="stylesheet" />
 <link href="administrator/js/plugins/multiupload/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
 <!-- MultiUpload -->
 <script type="text/javascript" src="administrator/js/plugins/multiupload/jquery.filer.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        //ckeditor
-        $(".ck_editor").each(function(index, el) {
-          CKEDITOR.replace( $(this).find("textarea").attr("id"), {
-					toolbar: [
-		{ name: 'document', items: [ 'Source','-','NumberedList','BulletedList' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
-		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],			// Defines toolbar group without name.
-		'/',	
-    // Line break - next group will be placed in new line.
-		{ name: 'basicstyles', items: [ 'Bold', 'Italic' ] },
-    
-	]
-				} );
-            // CKEDITOR.replace( $(this).find("textarea").attr("id"), {
-                // height : 300,
-                // entities: false,
-                // basicEntities: false,
-                // entities_greek: false,
-                // entities_latin: false,
-                // filebrowserBrowseUrl : 'administrator/ckfinder/ckfinder.html',
-                // filebrowserImageBrowseUrl : 'administrator/ckfinder/ckfinder.html?type=Images',
-                // filebrowserFlashBrowseUrl : 'administrator/ckfinder/ckfinder.html?type=Flash',
-                // filebrowserUploadUrl : 'administrator/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                // filebrowserImageUploadUrl : 'administrator/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                // filebrowserFlashUploadUrl : 'administrator/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                // allowedContent:
-                    // 'h1 h2 h3 p blockquote strong em;' +
-                    // 'a[!href];' +
-                    // 'img(left,right)[!src,alt,width,height];' +
-                    // 'table tr th td caption;' +
-                    // 'span{!font-family};' +
-                    // 'span{!color};' +
-                    // 'span(!marker);' +
-                    // 'del ins'
-                // });
-        });
-    });
-</script>
 
 
 <script type="text/javascript">     
@@ -704,7 +661,27 @@ function get_phaplyd()
  -->
                 </div>
             </div>
+        <div class="row-field1">
+            <div class="left_select left_select5">
+                <p>Tải hình ảnh thumb:</p>
+            </div>
+            <div class="field-content field-content4" style="padding-top:10px">
+                <input type="file" id="file" name="file" class="uploader" />
 
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="row-field1">
+            <label></label>
+            <div class="left_select left_select5">
+                <p>Hình Hiện Tại :</p>
+            </div>
+            <div class="field-content field-content4"">
+
+            <div class="mt10"><img src="<?php if( $dangtin_detail['thumb']) { echo _upload_product1.$dangtin_detail['thumb']; }else{echo "upload/hinhanh/117x106x1/noimage.png";} ?>"  alt="NO PHOTO"  /></div>
+        </div>
+        <div class="clear"></div>
+    </div>
             <div class="row-field1">
                 <div class="left_select left_select5">
                     <p>Đăng hình ảnh(<span>*</span>)</p>
@@ -856,6 +833,7 @@ function get_phaplyd()
     $(function() {
       $( "#txtFromDate" ).datepicker({dateFormat:'dd-mm-yy'});
       $( "#txtToDate" ).datepicker({dateFormat:'dd-mm-yy'});
+        $(" input#file").uniform();
     });
 
     $(document).ready(function() {
@@ -881,10 +859,21 @@ function get_phaplyd()
 
 
 </script>
-
+<script>
+    jQuery.browser = {};
+    (function () {
+        jQuery.browser.msie = false;
+        jQuery.browser.version = 0;
+        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+            jQuery.browser.msie = true;
+            jQuery.browser.version = RegExp.$1;
+        }
+    })();
+</script>
 
 <script language="javascript" src="dkdn_custom/jquery.validate.min.js"></script>
 <script language="javascript" src="dkdn_custom/dkdn.js"></script>
+<script type="text/javascript" src="/administrator/js/plugins/forms/uniform.js"></script>
 
 <link href="css/chosen.css" type="text/css" rel="stylesheet" />
 
@@ -1075,225 +1064,7 @@ function get_phaplyd()
 
 
 
-<script type="text/javascript">
-function getAddress(){
-    $str =$("input[name=diachi]").val();
 
-    $xa_id= $("#xa").val();
-    if($xa_id){
-     $str+=" "+$("#xa option[value='"+$xa_id+"']").html();
-    }
-    $huyen_id = $("#huyen").val();
-    if($huyen_id){
-        $str+=" "+$("#huyen option[value='"+$huyen_id+"']").html();
-    }
-    $tinh_id = $("#tinh").val();
-    
-    if($tinh_id){
-        $str+=" "+$("#tinh option[value='"+$tinh_id+"']").html();
-
-    }
-
-     $xa_id = $("#xa").val();
-
-    if($xa_id){
-        $str+=" "+$("#xa option[value='"+$xa_id+"']").html();
-
-    }
-   
-    geocode($str);
-
-}
-$(".wrap-address select,.wrap-address input").change(function(){
-    getAddress();
-})
-    if ($('.content-item-map').is(':visible')) {
-        var map;
-        var markers;
-        var latlngs;
-        var gRedIcon = new google.maps.MarkerImage("images/icon_map.png", new google.maps.Size(100, 100), new google.maps.Point(0, 0), new google.maps.Point(15, 45));
-        var gSmallShadow = new google.maps.MarkerImage("mm_20_shadow.png", new google.maps.Size(22, 20), new google.maps.Point(0, 0), new google.maps.Point(6, 20));
-        var infowindow;
-        var geocoder;
-        var divThongTin = "<div>Kéo thả nhà đến vị trí mới</div>";
-
-        function initialize() {
-            var olat, olng;
-            olat = document.getElementById('Latitude').value;
-            olng = document.getElementById('Longitude').value;
-            if (olat == '' || olat == '0' || olng == '' || olng == '0') {
-                olat = 10.77836;
-                olng = 106.664468;
-            }
-            var mapOptions = {
-                center: new google.maps.LatLng(olat, olng),
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            latlngs = new google.maps.LatLng(olat, olng);
-            map = new google.maps.Map(document.getElementById('BanDo2'), mapOptions);
-            geocoder = new google.maps.Geocoder();
-            var input = document.getElementById('address');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-
-            autocomplete.bindTo('bounds', map);
-            infowindow = new google.maps.InfoWindow();
-
-            var marker = new google.maps.Marker({
-                map: map,
-                draggable: true,
-                icon: gRedIcon
-            });
-            if ((document.getElementById('Latitude').value != '' &&
-             document.getElementById('Latitude').value != '0')
-             && (document.getElementById('Longitude').value != ''
-             && document.getElementById('Longitude').value != '0')) {
-                marker.setPosition(new google.maps.LatLng(olat, olng));
-            }
-            markers = marker;
-            google.maps.event.addListener(marker, 'dragstart', function () {
-                var place = map.getCenter();
-                updateMarkerPosition(place);
-
-                google.maps.event.addListener(marker, 'drag', function () {
-                    updateMarkerPosition(marker.getPosition());
-                });
-
-                google.maps.event.addListener(marker, 'dragend', function () {
-                    geocodePosition(marker.getPosition());
-                });
-
-                marker.setPosition(place);
-            });
-
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(divThongTin);
-                infowindow.open(map, marker);
-            });
-
-            google.maps.event.addListener(map, 'click', function (e) {
-                geocoder.geocode(
-              { 'latLng': e.latLng },
-              function (results, status) {
-                  if (status == google.maps.GeocoderStatus.OK) {
-                      if (results[0]) {
-                          if (marker) {
-                              marker.setPosition(e.latLng);
-                          } else {
-                              marker = new google.maps.Marker({
-                                  position: e.latLng,
-                                  map: map
-                              });
-                          }
-                          //infowindow.setContent(divThongTin);
-                          infowindow.open(map, marker);
-                          updateMarkerPosition(marker.getPosition());
-                          geocodePosition(marker.getPosition());
-                          infowindow.setContent(divThongTin);
-                      } else {
-                          document.getElementById('geocoding').innerHTML =
-                        'No results found';
-                      }
-                  } else {
-                      document.getElementById('geocoding').innerHTML =
-                      'Geocoder failed due to: ' + status;
-                  }
-              });
-            });
-        }
-
-        function geocode(address) {
-           
-            geocoder.geocode({
-                'address': address,
-                'partialmatch': true
-            }, geocodeResult);
-        }
-
-        function geocodeResult(results, status) {
-            if (status == 'OK' && results.length > 0) {
-                map.fitBounds(results[0].geometry.viewport);
-                updateGeocodePosition(results[0].geometry.location); // Update Code Position
-                markers.setPosition(new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng())); // lat() && lng()
-                console.log(results[0].geometry.location);
-            } else {
-                //alert("Geocode was not successful for the following reason: " + status);
-            }
-        }
-
-        function geocodePosition(pos) {
-            geocoder.geocode({
-                latLng: pos
-            }, function (responses) {
-                if (responses && responses.length > 0) {
-                    updateMarkerAddress(responses[0].formatted_address);
-                } else {
-                    updateMarkerAddress('Cannot determine address at this location.');
-                }
-            });
-        }
-
-        //Update Geocode
-        function updateGeocodePosition(latlng) {// lat() && lng()
-            document.getElementById('Latitude').value = latlng.lat();
-            document.getElementById('Longitude').value = latlng.lng();
-            latlngs = latlng;
-        }
-        //Update Marker Position
-        function updateMarkerPosition(latlng) {
-            document.getElementById('Latitude').value = latlng.lat();
-            document.getElementById('Longitude').value = latlng.lng();
-            latlngs = latlng;
-        }
-
-        function updateMarkerAddress(str) {
-            document.getElementById('address').value = str;
-        }
-        var markers = new Array();
-        function timdiem(diadiems, radiuss) {
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-            markers = new Array();
-            var request = {
-                location: latlngs,
-                radius: radiuss,
-                types: diadiems
-            };
-            var service = new google.maps.places.PlacesService(map);
-            service.search(request, callback);
-        }
-        function callback(results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                }
-            }
-        }
-
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location
-            });
-
-            markers[markers.length] = marker;
-
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
-            });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    }
-
-$("#button_83").click(function () { 
-        address=$(AddressNumber).val();
-        $('#address').val(address);
-        geocode();
-});
-</script>
 
 <script type="text/javascript">
     var config = {

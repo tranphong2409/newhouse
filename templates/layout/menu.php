@@ -21,34 +21,15 @@
             </div><?//box_sub?>
         </li>
 
-        <li>
+        <li class="sub_bv">
             <a href="cho-thue" title="Nhà đất cho thuê">Nhà Đất Cho thuê</a>
-            <div class="box_sub">
-                <div class="sub_menu">
-                    <div class="content_submn">
-                        <h3>Theo địa điểm</h3>
-                        <ul>
-                            <?php for($i=0;$i<count($rs_quan);$i++){ ?>
-                                <li><a href="cho-thue/<?=$rs_quan[$i]['tenkhongdau']?>" title="<?=$rs_quan[$i]['ten_'.$lang]?>"><?=$rs_quan[$i]['ten_'.$lang]?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </div><?//content_submn?>
-                    <div class="content_submn">
-                        <h3>Theo loại</h3>
-                        <ul>
-                            <?php for($i=0;$i<count($rs_loainhathue);$i++){ ?>
-                                <li><a href="cho-thue/<?=$rs_loainhathue[$i]['tenkhongdau']?>" title="<?=$rs_loainhathue[$i]['ten_'.$lang]?>">Thuê <?=$rs_loainhathue[$i]['ten_'.$lang]?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </div><?//content_submn?>
-                    <div class="content_submn">
-                        <h3>Theo giá</h3>
-                        <ul>
-                            <?php for($i=0;$i<count($rs_gianhathue);$i++){ ?>
-                                <li><a href="cho-thue/<?=$rs_gianhathue[$i]['tenkhongdau']?>" title="<?=$rs_gianhathue[$i]['ten_'.$lang]?>"><?=$rs_gianhathue[$i]['ten_'.$lang]?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </div><?//content_submn?>
+            <div class="box_sub_bv">
+                <div class="sub_menu_bv">
+                    <ul>
+                        <?php for($i=0;$i<count($rs_loainhathue);$i++){ ?>
+                            <li><a href="cho-thue/<?=$rs_loainhathue[$i]['tenkhongdau']?>" title="<?=$rs_loainhathue[$i]['ten_'.$lang]?>">Thuê <?=$rs_loainhathue[$i]['ten_'.$lang]?></a></li>
+                        <?php } ?>
+                    </ul>
                 </div><?//sub_menu?>
             </div><?//box_sub?>
         </li>

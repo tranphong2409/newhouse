@@ -193,41 +193,7 @@ $(document).ready(function(e) {
         </div>
       </div>
       <div class="clear" style="height:15px;"></div>
-      <?php if($row_detail['toado']!=''){ ?>
-      <div class="clear" style="height:20px;"></div>
-      <div class="bandochitiet">
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD5Mevy_rl8U4ZyBB8i5jmdxfvb9Cg5UoE&sensor=false"></script>
-        <script>
-         function initialize2() {
-             var myLatlng = new google.maps.LatLng(<?=$row_detail['toado']?>);
-             var mapOptions = {
-                 zoom: 17,
-                 center: myLatlng
-             };
 
-             var map = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
-
-             var contentString = "<table style='text-align:left; font-weight:100;'><tr><th style='font-size:16px; color:#039BB2; font-weight:bold; text-transform: uppercase;'><?=$row_detail['ten_'.$lang]?></th></tr><tr><th>Địa chỉ : <?=$row_detail['diachi_'.$lang]?></th></tr><tr><th>Điện thoại : <?=$row_detail['dienthoai']?></th></tr><tr><th>Email : <?=$row_detail['email']?></th></tr></table>";
-
-             var infowindow = new google.maps.InfoWindow({
-                 content: contentString
-             });
-
-             var marker = new google.maps.Marker({
-                 position: myLatlng,
-                 map: map,
-                 title: "<?=$row_detail['ten_'.$lang]?>"
-             });
-             //infowindow.open(map, marker);
-         }
-
-         google.maps.event.addDomListener(window, 'load', initialize2);
-
-
-        </script>
-        <div id="map_canvas2"></div>
-      </div>
-      <?php } ?>
       <div class="clear" style="height:20px;"></div>
 
       <ul id="tabs" class=" wow fadeInUp " data-wow-delay='0.6s'>

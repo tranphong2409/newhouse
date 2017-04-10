@@ -1,4 +1,9 @@
-<?php  if(!defined('_source')) die("Error");
+<?php
+define ( _width_thumb , 197 );
+define ( _height_thumb , 178 );
+define ( _style_thumb , 1 );
+define ( _img_type , 'jpg|gif|png|jpeg|PNG|JPG|JPEG|GIF' );
+if(!defined('_source')) die("Error");
 
 		if($_SESSION['login_web']['email']=='')
 		{
@@ -60,7 +65,11 @@
 		
 			if(!empty($_POST))
 			{
-
+                $file_name=images_name($_FILES['file']['name']);
+                if($photo = upload_image("file", _img_type, _upload_product1,$file_name)){
+                    $data['photo'] = $photo;
+                    $data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_product1,$file_name,_style_thumb);
+                }
 
 					// $data['id_thanhvien']=$_SESSION['login_web']['id'];
 					
@@ -127,7 +136,7 @@
 					$data['ngaysua'] = time();
 					$d->setTable('product');
 					$d->setWhere('id',$id);
-
+//                    print_r($data);die;
 					if($d->update($data))
 					{
 

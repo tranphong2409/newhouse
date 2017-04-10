@@ -10,7 +10,7 @@
   <input type="hidden" name="command" />
 </form>
 <?php
-$num_el = 3;
+$num_el = 9;
 $num_pro_page = 0;
 $num_fea_page = 0;
 
@@ -61,7 +61,8 @@ $num_fea_page = 0;
                         $dc =  get_quanhuyen($product[$i]['id_quanhuyen']).', ';
                     }
                     if($product[$i]['id_tinhthanh']!=0){
-                        $dc .= get_tinhthanh('tinh',$product[$i]['id_tinhthanh']);
+                        $tinhthanh = get_tinhthanh('tinh',$product[$i]['id_tinhthanh']);
+                        $dc .= $tinhthanh['ten'];
                     }
                     if($dc){
                         echo '<p class="dc sp_attr">'.$dc.'</p>';
@@ -138,7 +139,8 @@ $num_fea_page = 0;
                         $dc =  get_quanhuyen($noibat[$i]['id_quanhuyen']).', ';
                     }
                     if($noibat[$i]['id_tinhthanh']!=0){
-                        $dc .= get_tinhthanh('tinh',$noibat[$i]['id_tinhthanh']);
+                        $tinhthanh = get_tinhthanh('tinh',$noibat[$i]['id_tinhthanh']);
+                        $dc .= $tinhthanh['ten'];
                     }
                     if($dc){
                         echo '<p class="dc sp_attr">'.$dc.'</p>';

@@ -1,5 +1,9 @@
 <?php if(!defined('_source')) die("Error");
-		
+define ( _width_thumb , 197 );
+define ( _height_thumb , 178 );
+define ( _style_thumb , 1 );
+define ( _img_type , 'jpg|gif|png|jpeg|PNG|JPG|JPEG|GIF' );
+
 		$title_bar .= "Đăng tin";
 $loaihinh=$_GET['id'];
 			if($_SESSION['login_web']["email"] == "")
@@ -14,9 +18,12 @@ $loaihinh=$_GET['id'];
 							
 				if(!empty($_POST))
 				{
-		
-				$file_name=images_name($_FILES['file']['name']);
 
+                $file_name=images_name($_FILES['file']['name']);
+                if($photo = upload_image("file", 'jpg|png|gif|PNG|GIF|JPG|JPEG|jpeg', _upload_product1,$file_name)){
+                    $data['photo'] = $photo;
+                    $data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_product1,$file_name,_style_thumb);
+                }
 				$data['id_thanhvien']=$_SESSION['login_web']['id'];
 				$data['id_tinhthanh'] = $_POST['tinh'];
 					$data['id_quanhuyen'] = $_POST['huyen'];
@@ -88,10 +95,10 @@ $loaihinh=$_GET['id'];
 									$file['tmp_name'] = $_FILES['files']['tmp_name'][$i];
 									$file['error'] = $_FILES['files']['error'][$i];
 									$file['size'] = $_FILES['files']['size'][$i];
-								    $file_name = images_name($_FILES['files']['name'][$i]);
-									$photo = upload_photos($file, 'jpg|png|gif|PNG|GIF|JPG|JPEG|jpeg', _upload_product_l,$file_name);
+								    $file_name1 = images_name($_FILES['files']['name'][$i]);
+									$photo = upload_photos($file, 'jpg|png|gif|PNG|GIF|JPG|JPEG|jpeg', _upload_product_l,$file_name1);
 									$data1['photo'] = $photo;
-									$data1['thumb'] = create_thumb($data1['photo'], 354, 266, _upload_product_l,$file_name,1);	
+									$data1['thumb'] = create_thumb($data1['photo'], 354, 266, _upload_product_l,$file_name1,1);
 									$data1['stt'] = (int)$_POST['stthinh'][$i];
 									$data1['hienthi'] = 1;
 									$data1['id_product'] = $id;

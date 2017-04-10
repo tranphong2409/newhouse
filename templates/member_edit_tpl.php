@@ -1,4 +1,15 @@
-<?php 
+<script>
+    jQuery.browser = {};
+    (function () {
+        jQuery.browser.msie = false;
+        jQuery.browser.version = 0;
+        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+            jQuery.browser.msie = true;
+            jQuery.browser.version = RegExp.$1;
+        }
+    })();
+</script>
+<?php
  function get_phongtamd()
   {
     global $dangtin_detail;
@@ -118,6 +129,7 @@ function get_phaplyd()
 
 <script src="administrator/ckeditor/ckeditor.js"></script>
  <script type="text/javascript" src="js/jquery.price_format.2.0.js"></script>
+ <script type="text/javascript" src="/administrator/js/plugins/forms/uniform.js"></script>
 <link href="administrator/js/plugins/multiupload/css/jquery.filer.css" type="text/css" rel="stylesheet" />
 <link href="administrator/js/plugins/multiupload/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
 <!-- MultiUpload -->
@@ -488,13 +500,13 @@ function get_phaplyd()
                             </div>
 
                     </div>
-                     <div class="row-field1">
+                     <div class="row-field1 hidden">
                 <div class="left_select left_select5">
                     <p>Thích hợp</p>
                 </div>
                 <div class="field-content1 field-content5">
                     
-                   <div class="formRight ck_editor">
+                   <div class="formRight">
                          <textarea rows="4" cols="" title="Nhập thích hợp . " class="thichhop_vi" id="thichhop_vi"  name="thichhop_vi"><?=$dangtin_detail['thichhop_vi']?></textarea>
                     </div>
                     <!--  <label id="noidung-error" class="error" for="noidung"></label>
@@ -502,13 +514,13 @@ function get_phaplyd()
                 </div>
             </div>
 
-<div class="row-field1">
+<div class="row-field1 hidden">
                 <div class="left_select left_select5">
                     <p>Cơ sở vật chất</p>
                 </div>
                 <div class="field-content1 field-content5">
                     
-                   <div class="formRight ck_editor">
+                   <div class="formRight ">
                          <textarea rows="4" cols="" title="Nhập Cơ sở vật chất . " class="csvc_vi" id="csvc_vi"  name="csvc_vi"><?=$dangtin_detail['csvc_vi']?></textarea>
                     </div>
                     <!--  <label id="noidung-error" class="error" for="noidung"></label>
@@ -516,13 +528,13 @@ function get_phaplyd()
                 </div>
             </div>            
                     
-                   <div class="row-field1">
+                   <div class="row-field1 hidden">
                 <div class="left_select left_select5">
                     <p>Môi trường xung quanh</p>
                 </div>
                 <div class="field-content1 field-content5">
                     
-                   <div class="formRight ck_editor">
+                   <div class="formRight ">
                          <textarea rows="4" cols="" title="Nhập Môi trường xung quanh . " class="moitruong_vi" id="moitruong_vi"  name="moitruong_vi"><?=$dangtin_detail['moitruong_vi']?></textarea>
                     </div>
                     <!--  <label id="noidung-error" class="error" for="noidung"></label>
@@ -633,10 +645,10 @@ function get_phaplyd()
 <?php } ?>       
     <div class="clear"></div>
 
-    <div class="title_info">
+    <div class="title_info hidden">
         <h2>Bản đồ</h2>
     </div>
-    <div class="noidung_detail">
+    <div class="noidung_detail hidden">
 
          <div class="row-field1">
             <div class="left_select left_select5">
@@ -650,7 +662,7 @@ function get_phaplyd()
 
             <div style="margin-top:10px;" class="item-input">                
                 <div class="form-editor content-item-map">
-                    <div class="map-wrapper">
+                    <div class="map-wrapper hidden">
                         <div class="map-content">
                             <div id="BanDo2" class="map-edit"></div>
                         </div>
@@ -696,14 +708,34 @@ function get_phaplyd()
                 </div>
                 <div class="field-content1 field-content5">
                     
-                   <div class="formRight ck_editor">
+                   <div class="formRight ">
                          <textarea  required rows="4" cols="" title="Nhập nội dung . " id="noidung" class="noidung"  name="noidung"><?=$dangtin_detail['noidung_vi']?></textarea>
                     </div>
                     <!--  <label id="noidung-error" class="error" for="noidung"></label>
  -->
                 </div>
             </div>
+        <div class="row-field1">
+            <div class="left_select left_select5">
+                <p>Tải hình ảnh thumb:</p>
+            </div>
+			<div class="field-content field-content4" style="padding-top:10px">
+            	<input type="file" id="file" name="file" class="uploader" />
 
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="row-field1">
+			<label></label>
+            <div class="left_select left_select5">
+                <p>Hình Hiện Tại :</p>
+            </div>
+			<div class="field-content field-content4"">
+
+			<div class="mt10"><img src="<?php if( $dangtin_detail['thumb']) { echo _upload_product1.$dangtin_detail['thumb']; }else{echo "upload/hinhanh/117x106x1/noimage.png";} ?>"  alt="NO PHOTO"  /></div>
+			</div>
+			<div class="clear"></div>
+		</div>
             <div class="row-field1">
                 <div class="left_select left_select5">
                     <p>Đăng hình ảnh(<span>*</span>)</p>
@@ -715,7 +747,7 @@ function get_phaplyd()
                                 ĐĂNG ẢNH THẬT ĐỂ ĐƯỢC HIỆU QUẢ NHẤT!
                             </div>
                             <div class="image-wapper-take">
-                               <a class="file_input" data-jfiler-name="files" data-jfiler-extensions="jpg, jpeg, png, gif"><img src="administrator/images/image_add.png" alt="" width="100"></a> 
+                               <a class="file_input" data-jfiler-name="files" data-jfiler-extensions="jpg, jpeg, png, gif"><img src="images/upload.jpg" alt="" width="200"></a>
 
 
 
@@ -841,15 +873,21 @@ function get_phaplyd()
       padding-top:10px;
       padding-bottom:10px;
     }
+    .field-content5 {
+        width: 100% !important;
+    }
+    textarea{ width: 100%;
+        height: 200px; }
 </style>
 
 
 
 <script type="text/javascript">
-    
+
     $(function() {
       $( "#txtFromDate" ).datepicker({dateFormat:'dd-mm-yy'});
       $( "#txtToDate" ).datepicker({dateFormat:'dd-mm-yy'});
+        $(" input#file").uniform();
     });
 
     $(document).ready(function() {
