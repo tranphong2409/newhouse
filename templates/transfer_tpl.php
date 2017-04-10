@@ -8,11 +8,11 @@
 <BODY>
 
 <div id="alert">
-	<img width="64px" src="images/icon/<?=($stt) ? 'success' : 'error'?>.png" />
+	<img width="64px" src="/images/icon/<?=($stt) ? 'success' : 'error'?>.png" />
 	<div class="title">Thông báo</div>
 	<div class="message"><?=$showtext?></div>
 	<div class="rlink" style="font-size: 18px;">(<a href="<?=$page_transfer?>"  style=" color: #015364; text-decoration: none;">Click vào đây nếu không muốn đợi lâu</a>)</div>
-	<img src="images/icon/progress_bar.gif" alt='' />
+	<img src="/images/icon/progress_bar.gif" alt='' />
 
 </div>
 

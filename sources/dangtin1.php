@@ -3,7 +3,7 @@ define ( _width_thumb , 197 );
 define ( _height_thumb , 178 );
 define ( _style_thumb , 1 );
 define ( _img_type , 'jpg|gif|png|jpeg|PNG|JPG|JPEG|GIF' );
-
+define ( _upload_product1 , 'upload/product/' );
 		$title_bar .= "Đăng tin";
 $loaihinh=$_GET['id'];
 			if($_SESSION['login_web']["email"] == "")
